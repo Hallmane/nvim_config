@@ -1,4 +1,4 @@
 --require "hall"
 --require("hall")
-require "hall.options"
+require "hall"
 

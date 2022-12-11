@@ -1,5 +1,5 @@
-local nnoremap = require("hall.keymap").nnoremap
+--local nnoremap = require("hall.keymap").nnoremap
 
-nnoremap("<leader>pv", "<cmd>Ex<CR>")
+--nnoremap("<leader>pv", "<cmd>Ex<CR>")
 
 
