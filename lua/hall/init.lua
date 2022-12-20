@@ -1,2 +1,2 @@
-require("hall.options")
-require("hall.remap")
+require("hall.options") --vim options
+require("hall.remap")   --remaps

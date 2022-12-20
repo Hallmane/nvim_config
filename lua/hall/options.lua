@@ -22,7 +22,7 @@ local options = {
     cmdheight = 2,           -- Give more space for displaying messages.
     pumheight = 10,
     updatetime = 50,        -- not having longer updatetime (default is 4000 ms = 4 s) 
-    colorcolumn = "80",
+    --colorcolumn = "80",
     clipboard = "unnamedplus",
     guifont = "monospace:h17",
 }

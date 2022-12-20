@@ -1,41 +1,59 @@
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
 
-keymap("", "<Space>", "<Nop>", opts)
+vim.keymap.set("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "   -- mapping space as leader
 vim.g.maplocalleader = " "
 
 -- Normal mode --
 -- window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 
+--j, doesn't work
+vim.keymap.set("n", "J", "mzJ`z")
 
-keymap("n", "<leader>e", ":Lex 20<cr>", opts) -- lefthand explorer, cr carriage return
+-- focused d/u navigation
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- focused searches
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "n", "Nzzzv")
+
+-- system clipboard
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
+
+-- netrw
+vim.keymap.set("n", "<leader>e", ":Lex 20<cr>")
 
 -- navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<S-l>", ":bnext<CR>")
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
 
 -- resize splits
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Visual mode --
 -- stay in indent 
---keymap("v", "<", "<gv", opts)
---keymap("v", ">", ">gv", opts)
+--vim.keymap.set("v", "<", "<gv", opts)
+--vim.keymap.set("v", ">", ">gv", opts)
 
--- move text with alt+j/k
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+vim.keymap.set("v", "<J>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<K>", ":m '<-2<CR>gv=gv")
 
-keymap("v", "p", '"_dP', opts) -- dont yank when replacing in visual
+vim.keymap.set("v", "p", '"_dP') -- dont yank when replacing in visual
 
+vim.keymap.set("n", "Q", "<nop>")
+
+-- tmux prev sesh to change win
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 
 -- IDK about the stuff below
@@ -46,7 +64,7 @@ keymap("v", "p", '"_dP', opts) -- dont yank when replacing in visual
 --            outer_opts,
 --            opts or {}
 --        )
---        vim.keymap.set(op, lhs, rhs, opts)
+--        vim.vim.keymap.set.set(op, lhs, rhs, opts)
 --    end
 --end
 --
