@@ -33,6 +33,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- move text with alt+j/k
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+
 keymap("v", "p", '"_dP', opts) -- dont yank when replacing in visual
 
 

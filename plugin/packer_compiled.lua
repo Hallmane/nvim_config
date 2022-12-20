@@ -74,9 +74,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["packer.nvim"] = {
+  ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/hall/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/hall/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["packer.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/hall/.local/share/nvim/site/pack/packer/opt/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
@@ -90,10 +96,10 @@ _G.packer_plugins = {
     path = "/home/hall/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
-  ["telescope-github.nvim"] = {
+  ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/hall/.local/share/nvim/site/pack/packer/start/telescope-github.nvim",
-    url = "https://github.com/nvim-telescope/telescope-github.nvim"
+    path = "/home/hall/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   }
 }
 
