@@ -19,7 +19,7 @@ local options = {
     termguicolors = true,
     scrolloff = 8,
     signcolumn = "yes",
-    cmdheight = 2,           -- Give more space for displaying messages.
+    cmdheight = 1,
     pumheight = 10,
     updatetime = 50,        -- not having longer updatetime (default is 4000 ms = 4 s) 
     --colorcolumn = "80",
